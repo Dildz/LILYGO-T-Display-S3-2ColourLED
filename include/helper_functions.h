@@ -9,8 +9,7 @@
 // Define the state machine colour states
 enum class LEDColour {
   RED,
-  GREEN,
-  ORANGE
+  GREEN
 };
 
 // Define the state machine mode states
@@ -45,10 +44,6 @@ void setLEDColour(LEDColour Colour) {
       break;
     case LEDColour::GREEN:
       digitalWrite(RED_PIN, LOW);
-      digitalWrite(GREEN_PIN, HIGH);
-      break;
-    case LEDColour::ORANGE:
-      digitalWrite(RED_PIN, HIGH);
       digitalWrite(GREEN_PIN, HIGH);
       break;
     default: // default to red if an unknown colour is specified
@@ -90,7 +85,7 @@ void displayStatus(TFT_eSPI &tft) {
     tft.println((currentState == State::Colour_CHANGE_AUTO) ? "AUTO MODE" : "MANUAL MODE");
 
     tft.println("\nCurrent Colour:");
-    const char* colourNames[] = {"RED", "GREEN", "ORANGE"};
+    const char* colourNames[] = {"RED", "GREEN"};
     tft.println(colourNames[static_cast<int>(currentColour)]);
 
     tft.println("\nButton State:");

@@ -18,8 +18,7 @@
  *     - TFT_eSPI Library: Utilising the TFT_eSPI graphics library for direct display control.
  *
  * How It Works:
- *   1. LED Control: The code manages an LED, capable of producing Red, Green & when combined
- *       it's an Orangy-Yellow.
+ *   1. LED Control: The code manages an LED, capable of producing Red, Green.
  *   2. Automatic Mode: The LED cycles through colours automatically, changing every second.
  *   3. Manual Mode: The user can manually change the LED colour with each button press.
  *   4. Button Interaction: The onboard "KEY" button (GPIO14) serves two purposes:
@@ -108,10 +107,6 @@ void setLEDColour(LEDColour Colour) {
       digitalWrite(RED_PIN, LOW);
       digitalWrite(GREEN_PIN, HIGH);
       break;
-    case LEDColour::ORANGE:
-      digitalWrite(RED_PIN, HIGH);
-      digitalWrite(GREEN_PIN, HIGH);
-      break;
     default: // default to red if an unknown colour is specified
       digitalWrite(RED_PIN, HIGH);
       digitalWrite(GREEN_PIN, LOW);
@@ -151,7 +146,7 @@ void displayStatus() {
     tft.println((currentState == State::Colour_CHANGE_AUTO) ? "AUTO MODE" : "MANUAL MODE");
 
     tft.println("\nCurrent Colour:");
-    const char* colourNames[] = {"RED", "GREEN", "ORANGE"};
+    const char* colourNames[] = {"RED", "GREEN"};
     tft.println(colourNames[static_cast<int>(currentColour)]);
 
     tft.println("\nButton State:");

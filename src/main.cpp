@@ -18,8 +18,7 @@
  *     - TFT_eSPI Library: Utilising the TFT_eSPI graphics library for direct display control.
  *
  * How It Works:
- *   1. LED Control: The code manages an LED, capable of producing Red, Green & when combined
- *       it's an Orangy-Yellow.
+ *   1. LED Control: The code manages an LED, capable of producing Red, Green.
  *   2. Automatic Mode: The LED cycles through colours automatically, changing every second.
  *   3. Manual Mode: The user can manually change the LED colour with each button press.
  *   4. Button Interaction: The onboard "KEY" button (GPIO14) serves two purposes:
