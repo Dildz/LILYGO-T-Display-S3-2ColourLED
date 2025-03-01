@@ -39,7 +39,7 @@
  *
  * Pin Connections:
  *   - RED LED        -> GPIO1
- *   - Green LED      -> GPIO2
+ *   - GREEN LED      -> GPIO2
  *   - Button         -> GPIO14 (built-in KEY button)
  *   - LCD Backlight  -> GPIO15
  *   - Ground         -> GND
