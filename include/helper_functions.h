@@ -56,7 +56,7 @@ void setLEDColour(LEDColour Colour) {
 
 // Function to change the current colour based on the next colour in the sequence.
 void changeColour() {
-  currentColour = static_cast<LEDColour>((static_cast<int>(currentColour) + 1) % 3);
+  currentColour = static_cast<LEDColour>((static_cast<int>(currentColour) + 1) % 2);
   setLEDColour(currentColour);
 }
 
